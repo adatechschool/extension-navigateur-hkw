@@ -26,14 +26,9 @@ document.getElementById("quiz-form").addEventListener("submit", function(event) 
 //     })
 // })
 
-const getSelectedText = () => {
-    console.log("couou")
-    const selection = window.getSelection();
-    const text = selection.toString();
-    console.log(text)
-}
-
-    chrome.scripting.executeScript({
-        // target: {tabId: tab.id},
-        func: getSelectedText
-    })
+// const getSelectedText = () => {
+//     console.log("couou")
+//     const selection = window.getSelection();
+//     const text = selection.toString();
+//     console.log(text)
+// }

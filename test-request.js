@@ -1,4 +1,3 @@
-
 const apiKey = 'sk-Pe9ruiXE0u96Cy7REhvzMrQhLE80-jnnZ6aUBiStRLT3BlbkFJxejqCWIJZfqla8Qkzq7_Z4hJaQIZG4WgN1ki4Y5Q4A'; // Remplacez par votre clé API OpenAI
 
 
@@ -33,11 +32,10 @@ async function getAIResponse() {
           },
           body: JSON.stringify(requestBody)
         });
-    
         const data = await response.json();
         console.log(data.choices[0].message.content); // Affiche la réponse de l'assistant
-      } catch (error) {
+    } catch (error) {
         console.error('Error:', error);
-      }
     }
+}
     
