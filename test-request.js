@@ -1,4 +1,4 @@
-const apiKey = 'sk-Pe9ruiXE0u96Cy7REhvzMrQhLE80-jnnZ6aUBiStRLT3BlbkFJxejqCWIJZfqla8Qkzq7_Z4hJaQIZG4WgN1ki4Y5Q4A'; // Remplacez par votre clé API OpenAI
+const apiKey = 'mySecretKey'; // Remplacez par votre clé API OpenAI
 
 
 const url = 'https://api.openai.com/v1/chat/completions';
