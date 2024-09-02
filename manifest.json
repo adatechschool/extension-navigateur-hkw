@@ -9,6 +9,13 @@
       "default_icon": "icon.png"
     },
   
-    "permissions": []
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+
+    "background": {
+      "service_worker": "background.js"
+    }
   }
   

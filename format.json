@@ -1,0 +1,35 @@
+{
+  "questions": [
+    {
+      "question1": "question1",
+      "choices1": [
+        "De définir les étapes qui composent la séquence d'une animation",
+        "De changer le fond de l'écran",
+        "De créer des images"
+      ],
+      "answer1": "De définir les étapes qui composent la séquence d'une animation"
+    },
+    {
+      "question2": "Comment manipule-t-on la règle @keyframes?",
+      "choices2": [
+        "Par HTML seulement",
+        "Par CSS seulement",
+        "Par JavaScript et le CSSOM"
+      ],
+      "answer2": "Par JavaScript et le CSSOM"
+    },
+    {
+      "question3": "Qu'est-ce qui correspond à la liste des étapes d'une animation?",
+      "choices3": [
+        "La propriété animation-name",
+        "La propriété background-color",
+        "La propriété border"
+      ],
+      "answer3": "La propriété animation-name"
+    }
+  ]
+}
+
+
+{"questions": [{"question1": "question1", "choices1": [ "choice1", "choice2", "choice3"], "answer1": "answer1"}]}
+    
