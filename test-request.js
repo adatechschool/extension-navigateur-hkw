@@ -1,4 +1,4 @@
-const apiKey = 'mySecretKey'; // Remplacez par votre clé API OpenAI
+const apiKey = ''; // Remplacez par votre clé API OpenAI
 
 
 const url = 'https://api.openai.com/v1/chat/completions';
@@ -34,6 +34,7 @@ async function getAIResponse() {
         });
         const data = await response.json();
         console.log(data.choices[0].message.content); // Affiche la réponse de l'assistant
+        return data.choices[0].message.content
     } catch (error) {
         console.error('Error:', error);
     }
