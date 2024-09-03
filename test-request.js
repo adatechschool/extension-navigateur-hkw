@@ -1,5 +1,4 @@
-const apiKey = ''; // Remplacez par votre clé API OpenAI
-
+const apiKey = 'mysecretkey'; // Remplacez par votre clé API OpenAI
 
 const url = 'https://api.openai.com/v1/chat/completions';
 const requestedFormat = "{'questions': [{'question1': 'question1', 'choices1': [ 'choice1', 'choice2', 'choice3'], 'answer1': 'answer1'}]}"

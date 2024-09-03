@@ -6,10 +6,9 @@ const getSelectedText = () => {
 
 
 document.getElementById("summary-button").addEventListener("click", function(clickData) {
-    // console.log('coucou')
     // getAIResponse();
     getSelectedText()
-    const selectedText = clickData.selectionText  
+    const selectedText = clickData.selectionText
     
 
     document.getElementById("summary-section").classList.remove("hidden");
