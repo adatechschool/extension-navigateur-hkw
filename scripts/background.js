@@ -4,6 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 
 
+
 const contextMenuItem = {
     "id": "summarize",
     "title": "Summarize",

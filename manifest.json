@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Learning Extension",
+  "name": "tl;dr",
   "version": "1.2",
   "description": "An extension that summarizes your article for you and then quizzes you!",
 
@@ -41,7 +41,6 @@
       "matches": ["<all_urls>", "http://*/*", "https://*/*"],
       "js": [
         "./scripts/script.js",
-        "./scripts/dashboard.js",
         "./scripts/display.js",
         "./scripts/request.js",
         "./scripts/storage.js",

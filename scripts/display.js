@@ -70,13 +70,13 @@ function countScore(response) {
       let quizChoice = document.querySelector(`label[for='${buttons[j].id}']`);
       if (buttons[j].checked) {
         let userAnswer = quizChoice.textContent;
-        if (userAnswer === response.questions[i][`answer${i}`]) {
-          userScore += 1;
+        if (userAnswer !== response.questions[i][`answer${i}`]) {
           // green if correct
-          quizChoice.style.border = "3px solid green";
+          quizChoice.style.border = "2px solid #DF928E";
         } else {
+          quizChoice.style.border = "0px";
+          userScore += 1;
           // red if false
-          quizChoice.style.border = "3px solid red";
         }
       }
     }
@@ -100,11 +100,12 @@ function displayScore(score) {
 }
 
 
-  
-document.getElementById("quiz-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (event.submitter.id === "submit-button") {
-    countScore(aiResponseJSON); 
-    storeElement(aiResponseJSON)
-  }
-});
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById("quiz-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (event.submitter.id === "submit-button") {
+      countScore(aiResponseJSON); 
+      storeElement(aiResponseJSON)
+    }
+  })
+})

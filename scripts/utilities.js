@@ -2,9 +2,8 @@
 const btn = document.getElementById('summary-button');
 const dashboardBtn = document.getElementById('dashboard-button');
 const loader = document.querySelector('.loader');
-
+const keyButton = document.querySelector('#key-button')
 const keyInput = document.getElementById('key-input')
-const keyButton = document.getElementById('key-button')
 const summaryButton = document.getElementById('summary-button')
 
 

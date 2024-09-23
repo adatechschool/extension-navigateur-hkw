@@ -3,34 +3,36 @@ if (localStorage.apiKey) {
 }
 
 
-keyButton.addEventListener('click', () => {
-  apiKey = keyInput.value
-  localStorage.setItem('apiKey', apiKey)
-  keyInput.style.display = 'none'
-  keyButton.style.display = 'none'
-  summaryButton.classList.remove('hidden')
+document.addEventListener('DOMContentLoaded', () => {
+    keyButton.addEventListener('click', () => {
+      apiKey = keyInput.value
+      localStorage.setItem('apiKey', apiKey)
+      keyInput.style.display = 'none'
+      keyButton.style.display = 'none'
+      summaryButton.classList.remove('hidden')
+    })
+    
+    try {
+        btn.addEventListener('click', () => {
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                chrome.scripting.executeScript({target: {tabId: tabs[0].id}, function: () => checkArticle(document)},
+                    (results) => {
+                        if (results[0].result) {
+                            fetchAPI()
+                            showLoader()
+                        } else {
+                            alert('No article found on this page...')
+                        }
+                    }
+                )
+            })
+        })
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 
-
-try {
-    btn.addEventListener('click', () => {
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            chrome.scripting.executeScript({target: {tabId: tabs[0].id}, function: () => checkArticle(document)},
-                (results) => {
-                    if (results[0].result) {
-                        fetchAPI()
-                        showLoader()
-                    } else {
-                        alert('No article found on this page...')
-                    }
-                }
-            )
-        })
-    })
-} catch (error) {
-    console.log(error)
-}
 
 
 
