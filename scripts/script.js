@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 chrome.scripting.executeScript({target: {tabId: tabs[0].id}, function: () => checkArticle(document)},
                     (results) => {
                         if (results[0].result) {
+                            getTabUrl()
                             fetchAPI()
                             showLoader()
                         } else {
@@ -80,13 +81,12 @@ async function fetchAPI() {
             },
             async (results) => {  
                 try {
-
                     const aiResponse = await getAIResponse(results[0].result);
                     aiResponseJSON = JSON.parse(aiResponse);
-                    console.log(aiResponseJSON);
-                    
+
+                    // const geminiResponse = await fetchGemini()
+                    // createSummary(req);
                     createSummary(aiResponseJSON);
-                    getTabUrl()
                 } catch (error) {
                     console.error('Error fetching AI response:', error);
                 } finally {

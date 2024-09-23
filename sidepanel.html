@@ -5,8 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>tl;dr</title>
         <link rel="stylesheet" type="text/css" href="./style/style.css" />
+        <script type="importmap">
+            {
+              "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+              }
+            }
+          </script>
+          
     </head>
     <body>
+        <script type="module">
+            import { GoogleGenerativeAI } from "@google/generative-ai";
+            const API_KEY = "AIzaSyAuM83GQUWHn0P1hhSWmX00gticwv1kPFQ";
+        </script>
+        
         <div class="theme-switch-wrapper">
             <label class="theme-switch" for="theme-checkbox">
                 <input type="checkbox" id="theme-checkbox">

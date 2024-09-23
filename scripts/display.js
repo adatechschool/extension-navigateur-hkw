@@ -49,13 +49,13 @@ function createQuiz(response) {
           quizChoice.setAttribute("for", `option${i}${j}`);
           quizChoice.classList.add('quiz-choice')
           quizChoice.innerText = response.questions[i][`choices${i}`][j];
-          let checkIcon = createItem('p', 'check-icon', 'innerText', '')
+
+          let invDiv = createItem('div', `inv-div`)
+          quizChoice.prepend(invDiv)
+          let checkIcon = createItem('p', `check-icon${i}${j}`, 'innerText', '')
           quizChoice.appendChild(checkIcon)
+
           quizRow.appendChild(quizChoice);
-          
-
-
-
           quizItem.appendChild(quizRow);
 
       }
@@ -65,7 +65,6 @@ function createQuiz(response) {
   }
 
 }
-// ✔✘
 
 function countScore(response) {
 
@@ -76,20 +75,21 @@ function countScore(response) {
   for (let i = 0; i < items.length; i++) {
     let buttons = document.getElementsByName(`choices${i}`);
     for (let j = 0; j < buttons.length; j++) {
-      let checkIcon = document.querySelector('.check-icon')
-      checkIcon ? console.log('oui') : null;
+      let checkIcon = document.querySelector(`.check-icon${i}${j}`)
       
-      checkIcon.innerText = ''
+      checkIcon.textContent = ''
+      console.log(checkIcon);
       let quizChoice = document.querySelector(`label[for='${buttons[j].id}']`);
       if (buttons[j].checked) {
         let userAnswer = quizChoice.textContent;
         if (userAnswer !== response.questions[i][`answer${i}`]) {
           // false
-          checkIcon.innerText = '✘'
+          
+          checkIcon.textContent = '✘'
         } else {
           // correct
-          checkIcon.innerText = '✔'
-          // quizChoice.style.border = "0px";
+
+          checkIcon.textContent = '✔'
           userScore += 1;
         }
       }
@@ -120,6 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.submitter.id === "submit-button") {
       countScore(aiResponseJSON); 
       storeElement(aiResponseJSON)
+      // countScore(req); 
+
     }
   })
 })

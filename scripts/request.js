@@ -41,3 +41,39 @@ async function getAIResponse(textFromDom) {
         console.error('Error:', error);
     }
 }
+
+
+
+// async function fetchGemini() {
+//   ///////////////////////////// WATCHOUT
+//   const apiKey = '';
+
+//   // Données du prompt
+//   const promptData = {
+//       prompt: {
+//           text: "Quels sont les points forts du dernier iPhone ?"
+//       }
+//   };
+
+//   // Effectuer la requête POST à l'API
+//   fetch(`${apiUrl}?key=${apiKey}`, {
+//       method: 'POST',
+//       headers: {
+//           'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(promptData),
+//   })
+//   .then(response => {
+//       if (!response.ok) {
+//           throw new Error('Erreur lors de la requête à Google Gemini');
+//       }
+//       return response.json();
+//   })
+//   .then(data => {
+//       console.log('Réponse de Google Gemini:', data);
+//   })
+//   .catch(error => {
+//       console.error('Erreur:', error);
+//   });
+
+// }

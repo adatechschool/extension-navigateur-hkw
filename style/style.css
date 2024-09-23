@@ -230,7 +230,9 @@ button.dashboard:hover {
 }
 
 .quiz-row label {
-    display: block;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
     padding: 1rem;
     cursor: pointer;
     width: 100%;
@@ -413,28 +415,6 @@ body.light-theme input:checked + .slider:before {
     display: none;
 }
 
-/* #dashboard-button {
-    color: var(--text-color);
-    text-decoration: none;
-    transition-duration: 0.5s;
-}
-
-
-#dashboard-button:hover {
-    color: var(--bg-color);
-    text-decoration: none;
-    -webkit-text-stroke-color: var(--text-color);
-    -webkit-text-stroke-width: 1px;
-} */
-
-
-/* #dashboard-button a.no-style-link {
-    color: var(--text-color);
-    text-decoration: none;
-    transition-duration: 0.5s;
-
-} */
-
 a {
     text-decoration: none;
 }
@@ -467,14 +447,23 @@ a {
     border: none;
 }
 
+.delete-button:hover {
+    transform: rotate(180deg);
+    transition:ease-in-out 0.2s
+}
+
 
 .quiz-choice{
     position: relative;
 }
 
-.check-icon{
-    padding: 1rem;
-    position: absolute;
-    right: 0;
-    top: 0;
+
+*[class^="check-icon"] {
+    padding-left: 1rem;
+    min-width: 2.5rem;
+}
+
+.inv-div{
+    padding-right: 1rem;
+    min-width: 2.5rem;
 }
