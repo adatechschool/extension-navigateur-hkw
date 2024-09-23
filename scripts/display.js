@@ -47,9 +47,17 @@ function createQuiz(response) {
 
           let quizChoice = document.createElement("label");
           quizChoice.setAttribute("for", `option${i}${j}`);
+          quizChoice.classList.add('quiz-choice')
           quizChoice.innerText = response.questions[i][`choices${i}`][j];
+          let checkIcon = createItem('p', 'check-icon', 'innerText', '')
+          quizChoice.appendChild(checkIcon)
           quizRow.appendChild(quizChoice);
+          
+
+
+
           quizItem.appendChild(quizRow);
+
       }
       quizItems.appendChild(quizItem);
       quizItems.scrollIntoView({behavior:'smooth', block:'start'});
@@ -57,9 +65,10 @@ function createQuiz(response) {
   }
 
 }
-
+// ✔✘
 
 function countScore(response) {
+
   let items = document.querySelectorAll(".quiz-item");
   let maxScore = items.length;
   let userScore = 0;
@@ -67,16 +76,21 @@ function countScore(response) {
   for (let i = 0; i < items.length; i++) {
     let buttons = document.getElementsByName(`choices${i}`);
     for (let j = 0; j < buttons.length; j++) {
+      let checkIcon = document.querySelector('.check-icon')
+      checkIcon ? console.log('oui') : null;
+      
+      checkIcon.innerText = ''
       let quizChoice = document.querySelector(`label[for='${buttons[j].id}']`);
       if (buttons[j].checked) {
         let userAnswer = quizChoice.textContent;
         if (userAnswer !== response.questions[i][`answer${i}`]) {
-          // green if correct
-          quizChoice.style.border = "2px solid #DF928E";
+          // false
+          checkIcon.innerText = '✘'
         } else {
-          quizChoice.style.border = "0px";
+          // correct
+          checkIcon.innerText = '✔'
+          // quizChoice.style.border = "0px";
           userScore += 1;
-          // red if false
         }
       }
     }

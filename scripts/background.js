@@ -30,6 +30,8 @@ async function summarizedFetchAPI() {
         async (results) => {                 
             const aiResponse = await getAIResponse(summarizedText)
             aiResponseJSON = JSON.parse(aiResponse);
+            console.log(aiResponseJSON);
+            
             createSummary(aiResponseJSON)
         }
       );

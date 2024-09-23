@@ -6,18 +6,18 @@
 
   "action": {
     "default_icon": {
-      "16": "./assets/img/icon16.png",
-      "32": "./assets/img/icon32.png",
-      "48": "./assets/img/icon48.png",
-      "128": "./assets/img/icon128.png"
+      "16": "./assets/img/logo-16.png",
+      "32": "./assets/img/logo-32.png",
+      "48": "./assets/img/logo-48.png",
+      "128": "./assets/img/logo-128.png"
     }
   },
 
   "icons": {
-    "16": "./assets/img/icon16.png",
-    "32": "./assets/img/icon32.png",
-    "48": "./assets/img/icon48.png",
-    "128": "./assets/img/icon128.png"
+    "16": "./assets/img/logo-16.png",
+    "32": "./assets/img/logo-32.png",
+    "48": "./assets/img/logo-48.png",
+    "128": "./assets/img/logo-128.png"
   },
 
   "permissions": [
